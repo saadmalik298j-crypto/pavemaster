@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asphalt Thickness Calculator & Pavement Depth Design Guide</title>
+  <meta name="description" content="Free engineering asphalt thickness calculator. Calculate required asphalt depth, base gravel thickness, hot mix asphalt tonnage, cubic yards, and material cost based on traffic loads and soil CBR.">
+  <meta name="keywords" content="asphalt thickness calculator, asphalt depth calculator, asphalt tonnage calculator, asphalt layer thickness, driveway asphalt thickness, commercial paving depth, AASHTO pavement design, asphalt base thickness">
+  <link rel="canonical" href="https://bitumencalcpro.com/asphalt-thickness-calculator">
+  
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Asphalt Thickness Calculator & Pavement Depth Design Guide">
+  <meta property="og:description" content="Calculate accurate asphalt layer depth, crushed aggregate base thickness, and tonnage for driveways, parking lots, and roadways. Free professional civil engineering tool.">
+  <meta property="og:url" content="https://bitumencalcpro.com/asphalt-thickness-calculator">
+  <meta property="og:image" content="https://bitumencalcpro.com/og-asphalt-calculator.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Asphalt Thickness Calculator & Pavement Design Tool">
+  <meta name="twitter:description" content="Determine precise asphalt layer thickness, subbase requirements, and mix tonnage with real-time structural cross-section preview.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://bitumencalcpro.com/#webapp",
+        "name": "Asphalt Thickness & Pavement Depth Calculator",
+        "url": "https://bitumencalcpro.com/asphalt-thickness-calculator",
+        "description": "Interactive civil engineering calculator to determine asphalt wearing course, binder course, and aggregate base thickness, volume, and tonnage.",
+        "applicationCategory": "EngineeringApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Calculate Asphalt Thickness and Material Tonnage",
+        "description": "Step-by-step engineering method to determine the required asphalt depth, aggregate base course, and hot-mix tonnage for any paving project.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Determine Traffic Load & Application Type",
+            "text": "Identify whether the pavement will serve residential passenger vehicles (light duty), commercial delivery vans, or heavy multi-axle freight trucks."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Evaluate Subgrade Soil Condition",
+            "text": "Assess the California Bearing Ratio (CBR) or resilient modulus of the natural subgrade soil to establish required granular base support."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Select Layer Thicknesses",
+            "text": "Allocate proper depths for the surface wearing course, intermediate binder course, and crushed aggregate base according to AASHTO guidelines."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculate Volume and Compacted Tonnage",
+            "text": "Multiply surface area by layer thickness to get volume, then multiply by compacted asphalt density (typically 145-148 lbs/cu ft or 2,350 kg/cu m)."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the standard asphalt thickness for a residential driveway?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Standard residential driveways carrying normal passenger cars typically require 2.5 to 3 inches (65 to 75 mm) of compacted hot-mix asphalt laid over 6 to 8 inches (150 to 200 mm) of compacted crushed aggregate base. For driveways with heavy SUVs, boat trailers, or occasional delivery trucks, 3.0 to 3.5 inches of asphalt is recommended, ideally placed in two lifts: a 2-inch binder course and a 1.5-inch surface course."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the minimum asphalt thickness that can be paved?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The absolute structural minimum thickness for a dense-graded hot-mix asphalt surface course is 1.5 inches (38 mm) after compaction. Paving less than 1.5 inches risks premature aggregate tear, rapid thermal cooling during placement, inadequate roller compaction, and cracking under wheel loads."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is asphalt laid in two separate layers instead of one thick lift?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Asphalt is paved in multiple courses (such as a binder course and a wearing course) because single lifts exceeding 3 inches (75 mm) retain internal heat unevenly and are very difficult to compact to target density. Two lifts provide higher density, smoother riding surface, superior shear resistance against rutting, and redundant waterproofing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does subgrade soil type affect required asphalt and base thickness?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Weak, cohesive clay soils with low California Bearing Ratios (CBR below 3%) have low load-bearing capacity. These soils require thicker aggregate base courses (8 to 12 inches) or geotextile stabilization to prevent subgrade pumping and rutting. Well-draining granular soils (CBR above 8%) require thinner base sections."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the standard density used to convert asphalt thickness to tonnage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the United States, compacted Hot Mix Asphalt (HMA) density is customarily estimated at 145 to 148 pounds per cubic foot (approximately 2.0 to 2.05 tons per cubic yard). In metric units, compacted asphalt is calculated at 2.32 to 2.40 metric tonnes per cubic meter."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Design Tokens & CSS Variables */
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --accent-soft: rgba(245, 158, 11, 0.12);
+      --secondary: #2563eb;
+      --secondary-soft: rgba(37, 99, 235, 0.08);
+      --success: #10b981;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --border-color: #e2e8f0;
+      --border-focus: #f59e0b;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset & Base Typography */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    code, pre, .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    /* Layout Containers */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Header & Navigation */
+    header.site-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .brand-logo svg {
+      width: 32px;
+      height: 32px;
+      color: var(--accent);
+    }
+
+    .brand-badge {
+      font-size: 0.7rem;
+      background: var(--accent-soft);
+      color: #b45309;
+      padding: 0.2rem 0.5rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.925rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-cta {
+      background-color: var(--primary);
+      color: #ffffff !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none !important;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-body) 100%);
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-soft);
+      color: #b45309;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 1.75rem;
+    }
+
+    .hero-features-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .feature-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      background: #ffffff;
+      padding: 0.4rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-tag svg {
+      width: 16px;
+      height: 16px;
+      color: var(--accent);
+    }
+
+    /* Main Calculator Tool Section */
+    #calculator {
+      padding: 3rem 0;
+    }
+
+    .calc-card-wrapper {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      margin-bottom: 3.5rem;
+    }
+
+    .calc-top-bar {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .calc-top-bar h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .unit-switch-container {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 3px;
+    }
+
+    .unit-btn {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .unit-btn.active {
+      background: var(--accent);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Calculator Grid */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    @media (max-width: 960px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Panel: Inputs */
+    .calc-inputs-pane {
+      padding: 2.25rem;
+      border-right: 1px solid var(--border-color);
+      background-color: #ffffff;
+    }
+
+    @media (max-width: 960px) {
+      .calc-inputs-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .form-select, .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background-color: var(--bg-body);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-select:focus, .form-input:focus {
+      border-color: var(--accent);
+      background-color: #ffffff;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .input-with-unit {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-with-unit input {
+      padding-right: 3.5rem;
+    }
+
+    .unit-addon {
+      position: absolute;
+      right: 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Slider styling */
+    .slider-container {
+      margin-top: 0.5rem;
+    }
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .slider-row input[type="range"] {
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: #cbd5e1;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .slider-row input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: transform 0.1s ease;
+    }
+
+    .slider-row input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .slider-value-box {
+      min-width: 65px;
+      text-align: right;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    /* Collapsible Advanced Settings */
+    .advanced-toggle {
+      background: none;
+      border: none;
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      margin-top: 0.5rem;
+    }
+
+    .advanced-box {
+      display: none;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 0.75rem;
+      border: 1px dashed var(--border-color);
+    }
+
+    .advanced-box.open {
+      display: block;
+    }
+
+    /* Right Panel: Results & Visualizer */
+    .calc-results-pane {
+      padding: 2.25rem;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Visual Cross Section Diagram */
+    .cross-section-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .cs-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .cs-diagram {
+      border: 2px solid #334155;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #475569;
+    }
+
+    .cs-layer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1rem;
+      color: #ffffff;
+      font-size: 0.825rem;
+      font-weight: 700;
+      transition: height 0.3s ease;
+      overflow: hidden;
+    }
+
+    .cs-layer-wearing {
+      background: #1e293b;
+      border-bottom: 2px dashed #94a3b8;
+    }
+
+    .cs-layer-binder {
+      background: #334155;
+      border-bottom: 2px solid #64748b;
+    }
+
+    .cs-layer-base {
+      background: #64748b;
+      border-bottom: 3px double #94a3b8;
+    }
+
+    .cs-layer-subgrade {
+      background: #78350f;
+      color: #fef3c7;
+      border-top: 1px solid #92400e;
+    }
+
+    .cs-layer-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Results Summary Cards */
+    .summary-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric-card.highlight {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-card.highlight .metric-label {
+      color: #94a3b8;
+    }
+
+    .metric-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.1;
+    }
+
+    .metric-card.highlight .metric-value {
+      color: var(--accent);
+    }
+
+    .metric-sub {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    .metric-card.highlight .metric-sub {
+      color: #cbd5e1;
+    }
+
+    /* Materials Breakdown Table */
+    .materials-table-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mat-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .mat-table th {
+      text-align: left;
+      padding: 0.5rem 0.6rem;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .mat-table td {
+      padding: 0.65rem 0.6rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .mat-table tr:last-child td {
+      border-bottom: none;
+      font-weight: 700;
+    }
+
+    .btn-action-row {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .btn-secondary {
+      flex: 1;
+      padding: 0.65rem 1rem;
+      background: #ffffff;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-subtle);
+      border-color: var(--text-muted);
+    }
+
+    /* Comprehensive Article & Guide Layout */
+    .article-section {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4.5rem 0;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+      .toc-aside {
+        display: none;
+      }
+    }
+
+    /* Table of contents sticky aside */
+    .toc-aside {
+      position: sticky;
+      top: 90px;
+      background: var(--bg-body);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+
+    .toc-aside h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .toc-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: var(--transition);
+      display: block;
+      line-height: 1.4;
+    }
+
+    .toc-list a:hover {
+      color: var(--secondary);
+      transform: translateX(4px);
+    }
+
+    /* Content Typography */
+    .content-article {
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .content-article h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-top: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--bg-subtle);
+    }
+
+    .content-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .content-article h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .content-article p {
+      margin-bottom: 1.35rem;
+    }
+
+    .content-article ul, .content-article ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .content-article li {
+      margin-bottom: 0.6rem;
+    }
+
+    .content-article strong {
+      color: var(--primary);
+    }
+
+    /* Data Tables in Content */
+    .data-table-wrapper {
+      margin: 1.75rem 0;
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+      text-align: left;
+      background: #ffffff;
+    }
+
+    .data-table th {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .data-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .data-table tr:nth-child(even) {
+      background-color: var(--bg-subtle);
+    }
+
+    /* Callout & Note Blocks */
+    .callout {
+      background: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .callout.callout-blue {
+      border-left-color: var(--secondary);
+      background: var(--secondary-soft);
+    }
+
+    .callout h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* FAQ Section Accordions */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    details.faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    details.faq-item[open] {
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+
+    summary.faq-question {
+      padding: 1.15rem 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      user-select: none;
+    }
+
+    summary.faq-question::-webkit-details-marker {
+      display: none;
+    }
+
+    summary.faq-question::after {
+      content: '+';
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary.faq-question::after {
+      content: '−';
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      color: #475569;
+      font-size: 0.975rem;
+      line-height: 1.75;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: var(--primary);
+      color: #94a3b8;
+      padding: 4rem 0 2rem;
+      border-top: 1px solid #1e293b;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#calculator" class="brand-logo" aria-label="Asphalt Thickness Calculator Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span>PaveMaster <span class="brand-badge">Pro Tool</span></span>
+        </a>
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#design-standards">Standards</a></li>
+            <li><a href="#layer-mechanics">Pavement Layers</a></li>
+            <li><a href="#tonnage-formulas">Formulas</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <a href="#calculator" class="btn-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Calculate Thickness
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-pill">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+        AASHTO & ASTM Empirical Design Standards
+      </div>
+      <h1>Asphalt Thickness Calculator & Pavement Depth Guide</h1>
+      <p>Estimate structural layer thickness, aggregate base requirements, hot mix asphalt volume, and compacted tonnage for residential driveways, parking lots, and heavy highways.</p>
+      
+      <div class="hero-features-bar">
+        <div class="feature-tag">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Multi-Lift Course Sizing
+        </div>
+        <div class="feature-tag">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Subgrade CBR Support
+        </div>
+        <div class="feature-tag">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Imperial & Metric Conversions
+        </div>
+        <div class="feature-tag">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Instant Cost Estimation
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator Section -->
+  <main class="container" id="calculator">
+    <div class="calc-card-wrapper">
+      
+      <!-- Calculator Top Controls -->
+      <div class="calc-top-bar">
+        <h2>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+          Asphalt Pavement Thickness Estimator
+        </h2>
+        <div class="unit-switch-container" role="radiogroup" aria-label="Measurement Unit Switcher">
+          <button type="button" class="unit-btn active" id="unit-imperial" onclick="switchUnit('imperial')">Imperial (Inches / Tons)</button>
+          <button type="button" class="unit-btn" id="unit-metric" onclick="switchUnit('metric')">Metric (mm / Tonnes)</button>
+        </div>
+      </div>
+
+      <!-- Main Calculator Body -->
+      <div class="calc-grid">
+        
+        <!-- Input Panel -->
+        <div class="calc-inputs-pane">
+          
+          <!-- Project Type Preset -->
+          <div class="form-group">
+            <label class="form-label" for="project-type">
+              <span>Pavement Classification</span>
+              <span class="form-hint">Presets AASHTO Recommended Depths</span>
+            </label>
+            <select id="project-type" class="form-select" onchange="applyProjectTypePreset()">
+              <option value="driveway-light">Residential Driveway - Light Duty (Cars & SUVs)</option>
+              <option value="driveway-heavy" selected>Residential Driveway - Heavy Duty (Trucks / RVs)</option>
+              <option value="parking-light">Commercial Parking - Light Automobile Stalls</option>
+              <option value="parking-heavy">Commercial Parking - Heavy Lanes & Delivery Aisles</option>
+              <option value="roadway-collector">Municipal Roadway - Urban Collector Street</option>
+              <option value="industrial-freight">Industrial Yard - Heavy Truck Terminal & Logistics</option>
+              <option value="path-walkway">Walkways & Golf Cart Paths (Non-Vehicular)</option>
+              <option value="custom">Custom Structural Specification</option>
+            </select>
+          </div>
+
+          <!-- Pavement Dimensions Mode -->
+          <div class="form-group">
+            <label class="form-label">
+              <span>Dimension Input Mode</span>
+            </label>
+            <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+              <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; cursor: pointer;">
+                <input type="radio" name="dim-mode" value="lw" checked onchange="toggleDimensionMode()"> Length & Width
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; cursor: pointer;">
+                <input type="radio" name="dim-mode" value="area" onchange="toggleDimensionMode()"> Direct Total Area
+              </label>
+            </div>
+
+            <!-- Length & Width Input Fields -->
+            <div id="dim-lw-fields" class="input-row">
+              <div>
+                <label class="form-hint" for="input-length">Length</label>
+                <div class="input-with-unit">
+                  <input type="number" id="input-length" class="form-input" value="60" min="1" step="any" oninput="calculatePavement()">
+                  <span class="unit-addon" id="unit-length-label">ft</span>
+                </div>
+              </div>
+              <div>
+                <label class="form-hint" for="input-width">Width</label>
+                <div class="input-with-unit">
+                  <input type="number" id="input-width" class="form-input" value="20" min="1" step="any" oninput="calculatePavement()">
+                  <span class="unit-addon" id="unit-width-label">ft</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Area Field -->
+            <div id="dim-area-field" style="display: none; margin-top: 0.5rem;">
+              <label class="form-hint" for="input-area">Total Surface Area</label>
+              <div class="input-with-unit">
+                <input type="number" id="input-area" class="form-input" value="1200" min="1" step="any" oninput="calculatePavement()">
+                <span class="unit-addon" id="unit-area-label">sq ft</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layer 1: Surface Course Thickness -->
+          <div class="form-group">
+            <div class="form-label">
+              <label for="thick-wearing">Surface / Wearing Course Asphalt</label>
+              <span class="form-hint" id="desc-wearing">Dense, fine aggregate top layer</span>
+            </div>
+            <div class="slider-row">
+              <input type="range" id="slider-wearing" min="1.0" max="4.0" step="0.25" value="1.5" oninput="syncSlider('wearing', this.value)">
+              <div class="slider-value-box" id="disp-wearing">1.50 in</div>
+            </div>
+          </div>
+
+          <!-- Layer 2: Binder Course Thickness -->
+          <div class="form-group">
+            <div class="form-label">
+              <label for="thick-binder">Intermediate / Binder Course Asphalt</label>
+              <span class="form-hint" id="desc-binder">Coarse aggregate structural layer</span>
+            </div>
+            <div class="slider-row">
+              <input type="range" id="slider-binder" min="0" max="6.0" step="0.25" value="1.5" oninput="syncSlider('binder', this.value)">
+              <div class="slider-value-box" id="disp-binder">1.50 in</div>
+            </div>
+          </div>
+
+          <!-- Layer 3: Aggregate Base Course -->
+          <div class="form-group">
+            <div class="form-label">
+              <label for="thick-base">Crushed Aggregate Base (CAB / DGA)</label>
+              <span class="form-hint" id="desc-base">Compacted rock foundation</span>
+            </div>
+            <div class="slider-row">
+              <input type="range" id="slider-base" min="2.0" max="16.0" step="0.5" value="8.0" oninput="syncSlider('base', this.value)">
+              <div class="slider-value-box" id="disp-base">8.0 in</div>
+            </div>
+          </div>
+
+          <!-- Subgrade Soil Quality -->
+          <div class="form-group">
+            <label class="form-label" for="subgrade-type">
+              <span>Subgrade Soil Condition (CBR Rating)</span>
+              <span class="form-hint">Affects base stability</span>
+            </label>
+            <select id="subgrade-type" class="form-select" onchange="evaluateSubgrade()">
+              <option value="good">Good Subgrade: Gravel / Sand (CBR > 8%)</option>
+              <option value="moderate" selected>Moderate Subgrade: Silty Clay / Sandy Loam (CBR 3% - 8%)</option>
+              <option value="poor">Poor Subgrade: Soft Saturated Clay / Peat (CBR < 3%)</option>
+            </select>
+            <div id="subgrade-warning" style="display: none; font-size: 0.775rem; color: #b45309; background: #fef3c7; padding: 0.5rem; border-radius: var(--radius-sm); margin-top: 0.4rem; border-left: 3px solid #f59e0b;">
+              ⚠️ Soft subgrade detected. Consider increasing aggregate base thickness to at least 10" (250mm) or placing a woven geotextile fabric.
+            </div>
+          </div>
+
+          <!-- Advanced Parameters Collapsible -->
+          <div>
+            <button type="button" class="advanced-toggle" onclick="toggleAdvancedSettings()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              Adjust Material Densities, Waste Factor & Unit Costs
+            </button>
+            <div id="advanced-settings-box" class="advanced-box">
+              <div class="input-row" style="margin-bottom: 0.75rem;">
+                <div>
+                  <label class="form-hint" for="input-waste">Waste / Compaction Margin (%)</label>
+                  <input type="number" id="input-waste" class="form-input" value="7" min="0" max="25" step="1" oninput="calculatePavement()">
+                </div>
+                <div>
+                  <label class="form-hint" for="input-asphalt-cost">Asphalt Cost (<span class="cost-unit-label">$/ton</span>)</label>
+                  <input type="number" id="input-asphalt-cost" class="form-input" value="115" min="0" step="5" oninput="calculatePavement()">
+                </div>
+              </div>
+              <div class="input-row">
+                <div>
+                  <label class="form-hint" for="input-base-cost">Base Gravel Cost (<span class="cost-unit-label">$/ton</span>)</label>
+                  <input type="number" id="input-base-cost" class="form-input" value="28" min="0" step="1" oninput="calculatePavement()">
+                </div>
+                <div>
+                  <label class="form-hint" for="input-asphalt-density">Compacted Asphalt Density</label>
+                  <input type="number" id="input-asphalt-density" class="form-input" value="145" min="120" max="165" step="1" oninput="calculatePavement()">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Results Panel -->
+        <div class="calc-results-pane">
+          
+          <!-- Visual Cross Section Representation -->
+          <div class="cross-section-card">
+            <div class="cs-header">
+              <span class="cs-title">Pavement Layer Cross-Section</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Interactive Depth Profile</span>
+            </div>
+            <div class="cs-diagram" id="diagram-container">
+              <!-- Surface Course -->
+              <div class="cs-layer cs-layer-wearing" id="vis-layer-wearing" style="height: 44px;">
+                <span>Surface Course (Wearing Layer)</span>
+                <span class="cs-layer-meta" id="vis-depth-wearing">1.5 in (38 mm)</span>
+              </div>
+              <!-- Binder Course -->
+              <div class="cs-layer cs-layer-binder" id="vis-layer-binder" style="height: 44px;">
+                <span>Intermediate Course (Binder Layer)</span>
+                <span class="cs-layer-meta" id="vis-depth-binder">1.5 in (38 mm)</span>
+              </div>
+              <!-- Base Course -->
+              <div class="cs-layer cs-layer-base" id="vis-layer-base" style="height: 70px;">
+                <span>Crushed Aggregate Base (Stone Foundation)</span>
+                <span class="cs-layer-meta" id="vis-depth-base">8.0 in (203 mm)</span>
+              </div>
+              <!-- Natural Subgrade -->
+              <div class="cs-layer cs-layer-subgrade" style="height: 36px;">
+                <span>Prepared Soil Subgrade (CBR Foundation)</span>
+                <span class="cs-layer-meta">Compacted Subgrade</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlight Key Metrics -->
+          <div class="summary-metrics-grid">
+            <div class="metric-card highlight">
+              <div>
+                <div class="metric-label">Total Asphalt Thickness</div>
+                <div class="metric-value" id="res-total-asphalt-thick">3.00 in</div>
+              </div>
+              <div class="metric-sub" id="res-total-asphalt-metric">76.2 mm Structural Depth</div>
+            </div>
+
+            <div class="metric-card highlight">
+              <div>
+                <div class="metric-label">Total Asphalt Required</div>
+                <div class="metric-value" id="res-total-asphalt-weight">29.0 Tons</div>
+              </div>
+              <div class="metric-sub" id="res-total-asphalt-vol">14.1 Cubic Yards (incl. 7% waste)</div>
+            </div>
+
+            <div class="metric-card">
+              <div>
+                <div class="metric-label">Crushed Aggregate Base</div>
+                <div class="metric-value" id="res-total-base-weight">71.2 Tons</div>
+              </div>
+              <div class="metric-sub" id="res-total-base-vol">8.0 in Depth (37.6 Cu Yd)</div>
+            </div>
+
+            <div class="metric-card">
+              <div>
+                <div class="metric-label">Estimated Material Cost</div>
+                <div class="metric-value" id="res-total-cost">$5,328</div>
+              </div>
+              <div class="metric-sub" id="res-cost-breakdown">Asphalt: $3,335 | Base: $1,993</div>
+            </div>
+          </div>
+
+          <!-- Materials Breakdown Table -->
+          <div class="materials-table-card">
+            <table class="mat-table" aria-label="Material quantity estimation table">
+              <thead>
+                <tr>
+                  <th>Layer Material</th>
+                  <th>Depth</th>
+                  <th>Volume</th>
+                  <th>Net Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Asphalt Surface Course</td>
+                  <td id="row-wearing-depth">1.5 in</td>
+                  <td id="row-wearing-vol">7.0 cu yd</td>
+                  <td id="row-wearing-wt">14.5 tons</td>
+                </tr>
+                <tr id="row-binder-tr">
+                  <td>Asphalt Binder Course</td>
+                  <td id="row-binder-depth">1.5 in</td>
+                  <td id="row-binder-vol">7.0 cu yd</td>
+                  <td id="row-binder-wt">14.5 tons</td>
+                </tr>
+                <tr>
+                  <td>Crushed Stone Base (CAB)</td>
+                  <td id="row-base-depth">8.0 in</td>
+                  <td id="row-base-vol">37.6 cu yd</td>
+                  <td id="row-base-wt">71.2 tons</td>
+                </tr>
+                <tr>
+                  <td>Total Pavement Section</td>
+                  <td id="row-total-depth">11.0 in</td>
+                  <td id="row-total-vol">51.6 cu yd</td>
+                  <td id="row-total-wt">100.2 tons</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="btn-action-row">
+            <button type="button" class="btn-secondary" onclick="window.print()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              Print Specification
+            </button>
+            <button type="button" class="btn-secondary" id="btn-copy-specs" onclick="copySpecsToClipboard()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Copy Specs
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Comprehensive Technical Content Section (1500+ Words) -->
+  <section class="article-section">
+    <div class="container">
+      <div class="article-grid">
+        
+        <!-- Table of Contents Aside -->
+        <aside class="toc-aside">
+          <h3>Guide Index</h3>
+          <ul class="toc-list">
+            <li><a href="#principles">1. Pavement Design Principles</a></li>
+            <li><a href="#design-standards">2. Thickness Standards by Application</a></li>
+            <li><a href="#layer-mechanics">3. Anatomy of Pavement Layers</a></li>
+            <li><a href="#structural-factors">4. Engineering Factors (Traffic & Soil)</a></li>
+            <li><a href="#tonnage-formulas">5. Mathematical Formulas & Calculation</a></li>
+            <li><a href="#compaction-best-practices">6. Compaction & Lift Guidelines</a></li>
+            <li><a href="#troubleshooting-pitfalls">7. Pavement Failure Prevention</a></li>
+            <li><a href="#faq">8. Frequently Asked Questions</a></li>
+          </ul>
+        </aside>
+
+        <!-- Technical Article Body -->
+        <article class="content-article">
+          
+          <section id="principles">
+            <h2>Understanding Asphalt Pavement Thickness Design Principles</h2>
+            <p>
+              Flexible asphalt pavement is a sophisticated multi-layered structural system engineered to distribute dynamic wheel loads across successive depths until the contact stress transmitted to the subgrade soil is within the natural soil's allowable bearing capacity. Unlike rigid Portland cement concrete pavements that bridge subgrade depressions through flexural beam strength, flexible pavements rely on internal aggregate interlock, bituminous binder cohesion, and layered elastic dissipation.
+            </p>
+            <p>
+              When a heavy vehicle axle traverses an asphalt surface, it exerts localized tire pressures between 80 to 120 pounds per square inch (psi). Unprepared natural subgrade soil typically possesses safe bearing capacities of merely 10 to 30 psi. The fundamental objective of calculating asphalt pavement thickness is to determine the precise depth of hot-mix asphalt (HMA) and underlying granular base required to attenuate this destructive vertical stress into a harmless, distributed load before it reaches the subgrade.
+            </p>
+            <p>
+              According to the landmark AASHTO (American Association of State Highway and Transportation Officials) Pavement Design Guide, flexible pavement performance is quantified using the concept of the <strong>Structural Number (SN)</strong>. The structural capacity of any pavement cross-section is the mathematical summation of the structural contributions of each independent layer:
+            </p>
+            <div class="callout callout-blue">
+              <h4>The AASHTO Structural Number Equation</h4>
+              <p><code>SN = (a₁ × D₁) + (a₂ × D₂ × m₂) + (a₃ × D₃ × m₃)</code></p>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                Where <code>a₁, a₂, a₃</code> represent the structural layer coefficients (e.g., 0.44 per inch for high-stability HMA, 0.14 per inch for crushed stone base), <code>D₁, D₂, D₃</code> represent layer thicknesses in inches, and <code>m₂, m₃</code> represent environmental drainage modification coefficients.
+              </p>
+            </div>
+            <p>
+              Under-designing pavement thickness inevitably results in early fatigue failure, longitudinal wheel-path cracking, subgrade rutting, and costly premature reconstruction. Conversely, over-designing pavement thickness inflates capital expenditures without proportional returns in pavement longevity. Utilizing an empirical asphalt thickness calculator ensures projects achieve the optimal balance between initial construction economy and multi-decade lifecycle durability.
+            </p>
+          </section>
+
+          <section id="design-standards">
+            <h2>Recommended Asphalt Thickness Standards by Application</h2>
+            <p>
+              Asphalt thickness requirements vary drastically depending on anticipated traffic frequencies, vehicle gross weights, subgrade moisture conditions, and geographic freeze-thaw severity. The table below outlines standard civil engineering depth profiles for common residential, commercial, municipal, and industrial pavement projects:
+            </p>
+
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Application Type</th>
+                    <th>Surface Course</th>
+                    <th>Binder Course</th>
+                    <th>Total Asphalt</th>
+                    <th>Crushed Base</th>
+                    <th>Expected Service Life</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Walking Paths & Golf Cart Trails</strong></td>
+                    <td>2.0 in (50 mm)</td>
+                    <td>None</td>
+                    <td>2.0 in (50 mm)</td>
+                    <td>4.0 in (100 mm)</td>
+                    <td>20–25 Years</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Residential Driveway (Standard Cars)</strong></td>
+                    <td>2.5 in (65 mm)</td>
+                    <td>Optional</td>
+                    <td>2.5 in (65 mm)</td>
+                    <td>6.0 in (150 mm)</td>
+                    <td>20–30 Years</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Residential Driveway (Heavy SUVs / Delivery)</strong></td>
+                    <td>1.5 in (38 mm)</td>
+                    <td>1.5 in (38 mm)</td>
+                    <td>3.0 in (75 mm)</td>
+                    <td>8.0 in (200 mm)</td>
+                    <td>25–30 Years</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Commercial Parking Stalls (Automobiles)</strong></td>
+                    <td>1.5 in (38 mm)</td>
+                    <td>2.0 in (50 mm)</td>
+                    <td>3.5 in (90 mm)</td>
+                    <td>8.0 in (200 mm)</td>
+                    <td>20–25 Years</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Commercial Truck Lanes & Dumpster Pads</strong></td>
+                    <td>2.0 in (50 mm)</td>
+                    <td>2.5 in (65 mm)</td>
+                    <td>4.5 in (115 mm)</td>
+                    <td>10.0 in (250 mm)</td>
+                    <td>20–25 Years</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Municipal Collector Street (Buses & Vans)</strong></td>
+                    <td>2.0 in (50 mm)</td>
+                    <td>3.5 in (90 mm)</td>
+                    <td>5.5 in (140 mm)</td>
+                    <td>10.0 in (250 mm)</td>
+                    <td>20–30 Years</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Heavy Industrial Depot & Freight Terminal</strong></td>
+                    <td>2.5 in (65 mm)</td>
+                    <td>4.5 in (115 mm)</td>
+                    <td>7.0 in (175 mm)</td>
+                    <td>12.0 in (300 mm)</td>
+                    <td>25–35 Years</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>1. Residential Driveway Specifications</h3>
+            <p>
+              For standard residential driveways supporting compact cars and passenger sedans, a single lift of 2.5 inches (65 mm) of compacted asphalt concrete placed over 6 inches (150 mm) of compacted dense-graded aggregate (DGA) is structurally adequate. However, modern residential properties routinely accommodate multi-ton delivery vans (Amazon, FedEx, UPS), heavy three-axle garbage trucks, recreational vehicles (RVs), and utility service trucks. For these demands, professional paving contractors strongly advocate a 3.0-inch total asphalt section paved in two distinct lifts (a 1.5-inch binder course and a 1.5-inch wearing surface) over 8 inches of aggregate base.
+            </p>
+
+            <h3>2. Commercial Parking Lots and Loading Bays</h3>
+            <p>
+              Commercial facilities require zoned pavement designs. Automobile parking bays experience static parking loads with negligible dynamic impact, permitting 3.0 to 3.5 inches of asphalt over 6 to 8 inches of aggregate base. Conversely, perimeter access lanes, fire lanes, and loading docks experience constant channelized truck braking and turning forces that generate severe horizontal shear stresses. These high-stress transit corridors mandate 4.5 to 5.5 inches of hot-mix asphalt supported by 10 to 12 inches of dense crushed stone base.
+            </p>
+
+            <h3>3. Heavy Highway and Industrial Logistics Pavements</h3>
+            <p>
+              Highway and container terminal pavements carry millions of Equivalent Single Axle Loads (ESALs). These heavy duty structures demand full-depth asphalt sections or thick composite sections comprising a polymer-modified asphalt surface course, high-stability binder courses, and asphalt-treated permeable bases (ATPB) designed for rapid subsurface drainage.
+            </p>
+          </section>
+
+          <section id="layer-mechanics">
+            <h2>Anatomy of Modern Asphalt Pavement Layers</h2>
+            <p>
+              To construct a long-lasting, weather-resistant pavement, engineers assemble a monolithic structure composed of several interrelated layers. Each strata performs a dedicated structural and hydraulic duty:
+            </p>
+
+            <h3>The Prepared Subgrade</h3>
+            <p>
+              The subgrade is the native in-situ soil beneath the constructed pavement. Prior to placing gravel or asphalt, the subgrade must be excavated to proper grade, stripped of organic topsoil, shaped with cross-slope crowns for drainage, and compacted to at least 95% of its Standard Proctor Maximum Dry Density (ASTM D698). Proof-rolling with a loaded 10-wheel dump truck is standard practice to identify soft, yielding pockets that require sub-excavation or geogrid stabilization.
+            </p>
+
+            <h3>The Crushed Aggregate Base (CAB)</h3>
+            <p>
+              The aggregate base course acts as the structural spine of the flexible pavement. Composed of crushed angular stone, quarry process (QP), or dense-graded aggregate (DGA) with gradation spanning 1.5-inch stone down to mineral fines, this layer provides frost isolation, high internal angle of internal friction, and rapid lateral drainage. Inadequate base thickness or poorly compacted aggregate is the root cause of more than 80% of all premature asphalt failures.
+            </p>
+
+            <h3>Prime Coat and Tack Coat Applications</h3>
+            <p>
+              Between pavement strata, specialized liquid asphalt emulsions must be sprayed. A <strong>prime coat</strong> penetrates and seals the granular aggregate base, binding loose dust particles and preparing the stone for hot-mix adhesion. Between asphalt lifts (such as between the binder course and surface course), a <strong>tack coat</strong> (typically cationic slow-setting emulsion like CSS-1h) is uniformly applied. The tack coat prevents slippage cracking by guaranteeing monolithic shear bonding between successive asphalt courses.
+            </p>
+
+            <h3>The Binder / Intermediate Course</h3>
+            <p>
+              Also known as the asphalt base course, the intermediate lift employs larger nominal maximum aggregate size (NMAS), typically 3/4-inch to 1-inch (19 mm to 25 mm) stone, with a lower asphalt binder content. This coarse aggregate matrix provides superior rutting resistance, high shear strength, and structural load transfer at an economical material cost.
+            </p>
+
+            <h3>The Surface / Wearing Course</h3>
+            <p>
+              The topmost layer of the pavement section is the wearing course. Formulated with finer aggregate (typically 3/8-inch or 1/2-inch NMAS) and higher asphalt cement binder content, the surface course creates a dense, watertight seal that repels surface stormwater, resists oxidation from ultraviolet radiation, provides skid-resistant tire traction, and creates an aesthetically flawless jet-black appearance.
+            </p>
+          </section>
+
+          <section id="structural-factors">
+            <h2>Key Engineering Factors Influencing Pavement Depth</h2>
+            <p>
+              Specifying asphalt thickness requires balancing multiple geotechnical, environmental, and mechanical variables. Civil engineers evaluate the following primary design factors during pavement cross-section calculation:
+            </p>
+
+            <h3>1. Equivalent Single Axle Loads (ESALs)</h3>
+            <p>
+              Pavements do not fail from the total count of vehicles, but from the magnitude of axle weights. Under the Fourth Power Law established during the AASHO Road Test, pavement structural damage increases proportionally to the fourth power of the axle load. A single fully loaded 80,000-lb tractor-trailer (inflicting approximately 2.4 to 3.0 ESALs) inflicts equivalent fatigue damage to more than 5,000 standard passenger sedans. Accurate ESAL projections govern whether a project needs a modest 3-inch section or an industrial 7-inch pavement.
+            </p>
+
+            <h3>2. Subgrade Bearing Capacity and California Bearing Ratio (CBR)</h3>
+            <p>
+              The stiffness and moisture sensitivity of the underlying subgrade directly determine the required thickness of the granular base. Subgrade strength is routinely tested via the <strong>California Bearing Ratio (CBR)</strong> or Resilient Modulus (M<sub>R</sub>). High-quality gravel subgrades (CBR 10%–20%) support traffic with modest base sections. Conversely, high-plasticity clays (CBR 1%–3%) undergo severe volumetric shrinkage during droughts and catastrophic loss of shear strength when saturated, necessitating deep aggregate subbases or lime/cement chemical stabilization.
+            </p>
+
+            <h3>3. Bitumen Binder Content and Mix Volumetrics</h3>
+            <p>
+              The structural performance and fatigue resistance of asphalt concrete are governed by volumetric design parameters, including Voids in Mineral Aggregate (VMA), Voids Filled with Asphalt (VFA), and air voids (typically targeted at 4.0% in laboratory Superpave gyratory compaction). When formulating asphalt concrete mixes, calculating the precise binder-to-aggregate ratio is fundamental for pavement durability, moisture resistance, and rutting resistance. For civil engineers, batching plants, and paving estimators looking to calculate liquid asphalt binder requirements, emulsion application rates, or tank capacities alongside structural layer depths, you can utilize the <a href="https://bitumencalcpro.com">Bitumen Calculator Free</a> to determine binder weight, bitumen volume, and cost allocations across large-scale projects.
+            </p>
+
+            <h3>4. Climate, Frost Depth, and Subsurface Drainage</h3>
+            <p>
+              In northern climates subject to deep winter freezes, water in the subgrade freezes and expands into ice lenses, causing frost heaving. When spring thawing begins from the surface downward, meltwater becomes trapped above the frozen deeper subgrade, turning the road base into a saturated slurry with near-zero bearing capacity. Pavement cross-sections in frost zones must incorporate aggregate bases extending to at least 50% of local frost penetration depth, coupled with positive geotextile edge drains.
+            </p>
+          </section>
+
+          <section id="tonnage-formulas">
+            <h2>How to Calculate Asphalt Tonnage and Material Requirements</h2>
+            <p>
+              Ordering hot-mix asphalt from an asphalt batch plant requires converting structural layer depths and surface dimensions into compacted material weight (tons or metric tonnes). The mathematical derivation is straightforward when broken down systematically.
+            </p>
+
+            <h3>The Mathematical Formula</h3>
+            <p>
+              To calculate the net volume of compacted hot-mix asphalt or crushed aggregate base:
+            </p>
+            <div class="callout">
+              <h4>Volume Calculation Equations</h4>
+              <p><strong>Imperial System:</strong></p>
+              <p><code>Volume (Cubic Feet) = Area (sq ft) × [Thickness (inches) / 12]</code></p>
+              <p><code>Volume (Cubic Yards) = Volume (Cubic Feet) / 27</code></p>
+              <p style="margin-top: 0.75rem;"><strong>Metric System:</strong></p>
+              <p><code>Volume (Cubic Meters) = Area (sq m) × [Thickness (mm) / 1000]</code></p>
+            </div>
+
+            <p>
+              Once cubic volume is established, density constants are applied to determine tonnage:
+            </p>
+            <div class="callout callout-blue">
+              <h4>Compacted Tonnage Equations</h4>
+              <p><strong>Imperial System (Using 145 lbs/cu ft standard HMA density):</strong></p>
+              <p><code>Asphalt Tonnage = [Volume (cu ft) × 145 lbs/cu ft] / 2,000 lbs × (1 + Waste Factor)</code></p>
+              <p><em>Practical shortcut:</em> <code>Tons = Area (sq ft) × Thickness (in) × 0.006042 × (1 + Waste)</code></p>
+              <p style="margin-top: 0.75rem;"><strong>Metric System (Using 2,350 kg/m³ standard density):</strong></p>
+              <p><code>Asphalt Tonnes = [Volume (m³) × 2,350 kg/m³] / 1,000 kg × (1 + Waste Factor)</code></p>
+            </div>
+
+            <h3>Worked Example: Residential Driveway Calculation</h3>
+            <p>
+              Consider a residential driveway measuring <strong>60 feet long by 20 feet wide</strong> (total surface area of <strong>1,200 square feet</strong>). The engineering design calls for:
+            </p>
+            <ul>
+              <li><strong>Asphalt Surface Course:</strong> 1.5 inches thick</li>
+              <li><strong>Asphalt Binder Course:</strong> 1.5 inches thick (Total 3.0 inches of asphalt)</li>
+              <li><strong>Crushed Aggregate Base:</strong> 8.0 inches thick</li>
+              <li><strong>Safety Waste Factor:</strong> 7% allowance for screed variation and edge compaction</li>
+            </ul>
+
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Material Component</th>
+                    <th>Thickness</th>
+                    <th>Net Volume</th>
+                    <th>Volume with Waste</th>
+                    <th>Calculated Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Asphalt Surface Course</td>
+                    <td>1.5 in (0.125 ft)</td>
+                    <td>150 cu ft (5.56 cu yd)</td>
+                    <td>160.5 cu ft (5.94 cu yd)</td>
+                    <td><strong>11.64 Tons</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Asphalt Binder Course</td>
+                    <td>1.5 in (0.125 ft)</td>
+                    <td>150 cu ft (5.56 cu yd)</td>
+                    <td>160.5 cu ft (5.94 cu yd)</td>
+                    <td><strong>11.64 Tons</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Total Hot Mix Asphalt</strong></td>
+                    <td><strong>3.0 in (0.250 ft)</strong></td>
+                    <td><strong>300 cu ft (11.11 cu yd)</strong></td>
+                    <td><strong>321 cu ft (11.89 cu yd)</strong></td>
+                    <td><strong>23.28 Tons</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Crushed Aggregate Base</strong></td>
+                    <td><strong>8.0 in (0.667 ft)</strong></td>
+                    <td><strong>800 cu ft (29.63 cu yd)</strong></td>
+                    <td><strong>856 cu ft (31.70 cu yd)</strong></td>
+                    <td><strong>57.78 Tons</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              In this scenario, ordering approximately 24 tons of hot-mix asphalt (12 tons of 19mm binder mix and 12 tons of 9.5mm wearing surface mix) and 58 tons of quarry process base stone guarantees complete structural coverage without job-site material shortages.
+            </p>
+          </section>
+
+          <section id="compaction-best-practices">
+            <h2>Compaction Mechanics and Lift Thickness Rules</h2>
+            <p>
+              Specifying the correct thickness on paper is meaningless without strict adherence to field compaction protocols. Hot Mix Asphalt achieves its design durability only when compacted to between 92% and 97% of its Maximum Theoretical Specific Gravity (Gmm), which corresponds to remaining in-place air voids of 3% to 8%.
+            </p>
+
+            <h3>The Golden Ratio: Lift Thickness to Nominal Maximum Aggregate Size</h3>
+            <p>
+              A fundamental rule of asphalt pavement engineering is the <strong>4:1 ratio rule</strong>: the compacted thickness of any individual asphalt lift should be at least three to four times the nominal maximum aggregate size (NMAS) of the mix. 
+            </p>
+            <ul>
+              <li>For a <strong>9.5 mm (3/8-inch) surface mix</strong>, the minimum compacted lift thickness is <strong>1.5 inches (38 mm)</strong>.</li>
+              <li>For a <strong>12.5 mm (1/2-inch) mix</strong>, the minimum compacted lift thickness is <strong>1.75 to 2.0 inches (45 to 50 mm)</strong>.</li>
+              <li>For a <strong>19.0 mm (3/4-inch) binder mix</strong>, the minimum compacted lift thickness is <strong>2.5 to 3.0 inches (65 to 75 mm)</strong>.</li>
+            </ul>
+            <p>
+              If a lift is paved too thin relative to its aggregate size, the steel roller drums will crush and fracture the coarse aggregate particles (aggregate degradation) without achieving proper density. Conversely, if an asphalt lift is laid deeper than 3.5 inches in a single pass, the mass of the mix retains internal heat while the outer crust cools, causing the material to shove and bridge under heavy rollers without consolidating the bottom half of the lift.
+            </p>
+
+            <h3>Compaction Temperature Windows</h3>
+            <p>
+              Hot mix asphalt exits the paver screed at temperatures between 280°F and 300°F (138°C to 149°C). Breakdown rolling with heavy double-drum vibratory rollers must commence immediately while mix temperature remains above 240°F (115°C). Once the asphalt cools below 175°F (79°C), the bitumen viscosity increases dramatically, rendering the mix unworkable and halting any further density gain.
+            </p>
+          </section>
+
+          <section id="troubleshooting-pitfalls">
+            <h2>Common Pavement Failures Caused by Thickness Errors</h2>
+            <p>
+              Understanding how pavements fail highlights the critical importance of accurate layer thickness calculation:
+            </p>
+
+            <h3>1. Alligator (Fatigue) Cracking</h3>
+            <p>
+              Characterized by a interconnected web of hexagonal fractures resembling reptile skin, alligator cracking initiates at the bottom of the asphalt layer where tensile bending strain is highest. If the total asphalt thickness or aggregate base depth is insufficient for the traffic loading, excessive deflection flexes the asphalt beyond its fatigue endurance limit. Once alligator cracking manifests, water rapidly infiltrates the subgrade, causing complete structural failure.
+            </p>
+
+            <h3>2. Subgrade Rutting vs. Mix Instability Rutting</h3>
+            <p>
+              Rutting presents as permanent longitudinal depressions in wheel paths. There are two distinct types:
+            </p>
+            <ul>
+              <li><strong>Subgrade Rutting:</strong> Depressions accompanied by broad pavement settlement, caused by inadequate overall pavement thickness or uncompacted subgrade.</li>
+              <li><strong>Instability Rutting:</strong> Narrow channelized depressions with lateral asphalt heaving along the wheel edges, caused by excess bitumen binder or inadequate binder course shear strength.</li>
+            </ul>
+
+            <h3>3. Longitudinal Joint Separation</h3>
+            <p>
+              When paving wide roadways in adjacent passes, cold longitudinal joints are created. Because the unconfined edge of the initial asphalt pass cools faster and receives less roller energy, it typically has higher air voids (often exceeding 10%). Specifying proper lift thicknesses facilitates echelon paving or joint adhesive tapes that prevent joint raveling.
+            </p>
+          </section>
+
+          <section id="faq">
+            <h2>Frequently Asked Questions About Asphalt Thickness</h2>
+            
+            <div class="faq-container">
+              
+              <details class="faq-item" open>
+                <summary class="faq-question">What is the standard asphalt thickness for a residential driveway?</summary>
+                <div class="faq-answer">
+                  For typical passenger vehicle use, a residential driveway requires 2.5 to 3 inches (65 to 75 mm) of compacted asphalt laid on top of 6 to 8 inches (150 to 200 mm) of compacted crushed aggregate stone. For homes with heavy delivery trucks, RVs, or boat trailers, an optimal 3.0-inch cross-section composed of a 1.5-inch binder course and a 1.5-inch surface course over 8 inches of crushed stone provides superior longevity and resists wheel indentations.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">What is the minimum asphalt thickness that can be paved?</summary>
+                <div class="faq-answer">
+                  The absolute structural minimum thickness for a hot-mix asphalt wearing course is 1.5 inches (38 mm) after final roller compaction. Paving less than 1.5 inches causes rapid heat loss during placement, prevents the paver screed from floating smoothly, leads to crushed aggregate, and results in rapid raveling and delamination under vehicle traffic.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">Why is asphalt laid in two lifts instead of one thick layer?</summary>
+                <div class="faq-answer">
+                  Asphalt is paved in two courses (a binder course and a wearing surface) because single lifts exceeding 3 inches are prone to uneven thermal cooling, making uniform density nearly impossible to achieve throughout the full depth. Applying two lifts delivers higher structural density, a substantially smoother final driving surface, superior rutting resistance, and redundant water resistance.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">How thick should the crushed aggregate base be under asphalt?</summary>
+                <div class="faq-answer">
+                  The crushed stone base should range from 6 inches (150 mm) for light residential driveways up to 10 to 14 inches (250 to 350 mm) for commercial parking lots, heavy bus lanes, and municipal roads. On soft or saturated clay soils (CBR &lt; 3%), base thicknesses must be increased by at least 2 to 4 inches or stabilized with geotextile fabric.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">What is the standard density used to convert asphalt thickness to tonnage?</summary>
+                <div class="faq-answer">
+                  In imperial measurements, compacted hot-mix asphalt is customarily calculated at 145 to 148 pounds per cubic foot, which equates to roughly 2.0 to 2.05 tons per cubic yard. In metric measurements, compacted asphalt density is calculated at 2.32 to 2.40 metric tonnes per cubic meter.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">How does soil CBR affect the required asphalt layer thickness?</summary>
+                <div class="faq-answer">
+                  The California Bearing Ratio (CBR) measures subgrade soil stiffness. Granular soils with high CBR (&gt; 8%) easily distribute wheel loads, allowing standard base and asphalt depths. Soft soils with low CBR (&lt; 3%) flex under traffic, transmitting excessive tensile strain to the asphalt layer. Low CBR conditions demand thicker aggregate base courses, higher structural numbers, and occasionally asphalt-stabilized base layers.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">What is the difference between an asphalt binder course and surface course?</summary>
+                <div class="faq-answer">
+                  An asphalt binder course uses larger aggregate (typically 3/4-inch to 1-inch stone) and slightly less asphalt cement binder to provide high structural stability, load distribution, and rut resistance at lower material cost. The surface course uses finer aggregate (3/8-inch to 1/2-inch stone) and higher bitumen binder content to create a watertight, smooth, and skid-resistant finish.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">Can asphalt be paved directly over dirt without an aggregate base?</summary>
+                <div class="faq-answer">
+                  No. Paving hot-mix asphalt directly over uncompacted native dirt will lead to catastrophic pavement failure within 6 to 18 months. Natural soil absorbs groundwater and softens during rainstorms or freeze-thaw cycles. Without a dense crushed stone base to dissipate stresses and drain water, wheel loads will punch directly through the asphalt.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">What is the difference between compacted thickness and uncompacted loose depth?</summary>
+                <div class="faq-answer">
+                  When hot-mix asphalt is laid by a paver screed before roller compaction, it is in a "loose" state. Asphalt compacts by approximately 20% to 25% under heavy vibratory rollers (known as the compaction factor). To achieve a finished, compacted thickness of 2.0 inches, the paver screed must place approximately 2.5 inches of loose mix.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">How much extra asphalt should I order for waste?</summary>
+                <div class="faq-answer">
+                  Professional paving contractors standardly add a 5% to 10% waste factor to theoretical tonnage calculations. This accounts for uncompacted edge bevels, irregularities in the aggregate base grade, paver screed crown adjustments, and material adhering to truck beds. For small irregular areas, a 10% safety margin is recommended.
+                </div>
+              </details>
+
+            </div>
+          </section>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>PaveMaster Engineering Tools</h4>
+          <p style="margin-bottom: 1rem; color: #94a3b8; font-size: 0.875rem;">
+            Professional civil engineering estimators and pavement thickness calculation tools based on AASHTO flexible pavement design guides, ASTM international testing standards, and field-proven construction practices.
+          </p>
+          <div style="font-size: 0.8rem; color: #64748b;">
+            Empowering contractors, municipal engineers, and property managers to estimate pavement sections with high precision.
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pavement Design Guides</h4>
+          <ul class="footer-links">
+            <li><a href="#calculator">Asphalt Thickness Calculator</a></li>
+            <li><a href="#design-standards">AASHTO Structural Number</a></li>
+            <li><a href="#layer-mechanics">Subbase & Aggregate Base</a></li>
+            <li><a href="#compaction-best-practices">Lift Thickness & Compaction</a></li>
+            <li><a href="#tonnage-formulas">Tonnage Formulas & Math</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Engineering Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#structural-factors">Bitumen & Mix Volumetrics</a></li>
+            <li><a href="#faq">Pavement Design FAQs</a></li>
+            <li><a href="#principles">Flexible vs Rigid Pavement</a></li>
+            <li><a href="#troubleshooting-pitfalls">Pavement Distress Diagnosis</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PaveMaster Civil Engineering Suite. All rights reserved.</div>
+        <div>Designed for professional civil engineers, paving estimators & asphalt contractors.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Engine -->
+  <script>
+    // State management
+    const state = {
+      unit: 'imperial', // 'imperial' | 'metric'
+      dimMode: 'lw',    // 'lw' | 'area'
+      length: 60,       // feet or meters
+      width: 20,        // feet or meters
+      area: 1200,       // sq ft or sq meters
+      thickWearing: 1.5,// inches or mm (38mm)
+      thickBinder: 1.5, // inches or mm (38mm)
+      thickBase: 8.0,   // inches or mm (200mm)
+      subgrade: 'moderate',
+      wasteFactor: 7,   // percent
+      asphaltCost: 115, // $ per ton or tonne
+      baseCost: 28,     // $ per ton or tonne
+      asphaltDensity: 145, // lbs/cu ft or kg/cu m
+      baseDensity: 135     // lbs/cu ft or kg/cu m
+    };
+
+    // Preset configurations for project types
+    const presets = {
+      'driveway-light': {
+        imperial: { wearing: 2.0, binder: 0.0, base: 6.0 },
+        metric:   { wearing: 50, binder: 0,   base: 150 }
+      },
+      'driveway-heavy': {
+        imperial: { wearing: 1.5, binder: 1.5, base: 8.0 },
+        metric:   { wearing: 40, binder: 40,  base: 200 }
+      },
+      'parking-light': {
+        imperial: { wearing: 1.5, binder: 2.0, base: 8.0 },
+        metric:   { wearing: 40, binder: 50,  base: 200 }
+      },
+      'parking-heavy': {
+        imperial: { wearing: 2.0, binder: 2.5, base: 10.0 },
+        metric:   { wearing: 50, binder: 65,  base: 250 }
+      },
+      'roadway-collector': {
+        imperial: { wearing: 2.0, binder: 3.5, base: 10.0 },
+        metric:   { wearing: 50, binder: 90,  base: 250 }
+      },
+      'industrial-freight': {
+        imperial: { wearing: 2.5, binder: 4.5, base: 12.0 },
+        metric:   { wearing: 65, binder: 115, base: 300 }
+      },
+      'path-walkway': {
+        imperial: { wearing: 2.0, binder: 0.0, base: 4.0 },
+        metric:   { wearing: 50, binder: 0,   base: 100 }
+      }
+    };
+
+    // Toggle unit system
+    function switchUnit(unit) {
+      if (state.unit === unit) return;
+      state.unit = unit;
+
+      const btnImp = document.getElementById('unit-imperial');
+      const btnMet = document.getElementById('unit-metric');
+      const lenLabel = document.getElementById('unit-length-label');
+      const widLabel = document.getElementById('unit-width-label');
+      const areaLabel = document.getElementById('unit-area-label');
+      const costLabels = document.querySelectorAll('.cost-unit-label');
+
+      const sWearing = document.getElementById('slider-wearing');
+      const sBinder = document.getElementById('slider-binder');
+      const sBase = document.getElementById('slider-base');
+
+      if (unit === 'imperial') {
+        btnImp.classList.add('active');
+        btnMet.classList.remove('active');
+        lenLabel.textContent = 'ft';
+        widLabel.textContent = 'ft';
+        areaLabel.textContent = 'sq ft';
+        costLabels.forEach(el => el.textContent = '$/ton');
+
+        // Convert dimensions from metric to imperial
+        state.length = Math.round(state.length * 3.28084);
+        state.width = Math.round(state.width * 3.28084);
+        state.area = Math.round(state.area * 10.7639);
+
+        // Slider limits for Imperial (inches)
+        sWearing.min = 1.0; sWearing.max = 4.0; sWearing.step = 0.25;
+        sBinder.min = 0.0; sBinder.max = 6.0; sBinder.step = 0.25;
+        sBase.min = 2.0; sBase.max = 16.0; sBase.step = 0.5;
+
+        // Convert current slider values
+        state.thickWearing = +(state.thickWearing / 25.4).toFixed(2);
+        state.thickBinder = +(state.thickBinder / 25.4).toFixed(2);
+        state.thickBase = +(state.thickBase / 25.4).toFixed(1);
+
+        state.asphaltDensity = 145; // lbs/cu ft
+        state.baseDensity = 135;
+        state.asphaltCost = 115;
+        state.baseCost = 28;
+      } else {
+        btnMet.classList.add('active');
+        btnImp.classList.remove('active');
+        lenLabel.textContent = 'm';
+        widLabel.textContent = 'm';
+        areaLabel.textContent = 'm²';
+        costLabels.forEach(el => el.textContent = '$/tonne');
+
+        // Convert dimensions from imperial to metric
+        state.length = +(state.length * 0.3048).toFixed(1);
+        state.width = +(state.width * 0.3048).toFixed(1);
+        state.area = +(state.area * 0.092903).toFixed(1);
+
+        // Slider limits for Metric (mm)
+        sWearing.min = 25; sWearing.max = 100; sWearing.step = 5;
+        sBinder.min = 0; sBinder.max = 150; sBinder.step = 5;
+        sBase.min = 50; sBase.max = 400; sBase.step = 10;
+
+        // Convert current slider values
+        state.thickWearing = Math.round(state.thickWearing * 25.4);
+        state.thickBinder = Math.round(state.thickBinder * 25.4);
+        state.thickBase = Math.round(state.thickBase * 25.4);
+
+        state.asphaltDensity = 2322; // kg/m³
+        state.baseDensity = 2160;
+        state.asphaltCost = 125;
+        state.baseCost = 30;
+      }
+
+      // Update input fields
+      document.getElementById('input-length').value = state.length;
+      document.getElementById('input-width').value = state.width;
+      document.getElementById('input-area').value = state.area;
+      document.getElementById('input-asphalt-density').value = state.asphaltDensity;
+      document.getElementById('input-asphalt-cost').value = state.asphaltCost;
+      document.getElementById('input-base-cost').value = state.baseCost;
+
+      sWearing.value = state.thickWearing;
+      sBinder.value = state.thickBinder;
+      sBase.value = state.thickBase;
+
+      updateSliderDisplays();
+      calculatePavement();
+    }
+
+    // Toggle Dimension Mode (Length & Width vs Direct Area)
+    function toggleDimensionMode() {
+      const mode = document.querySelector('input[name="dim-mode"]:checked').value;
+      state.dimMode = mode;
+      const lwFields = document.getElementById('dim-lw-fields');
+      const areaField = document.getElementById('dim-area-field');
+
+      if (mode === 'lw') {
+        lwFields.style.display = 'grid';
+        areaField.style.display = 'none';
+      } else {
+        lwFields.style.display = 'none';
+        areaField.style.display = 'block';
+      }
+      calculatePavement();
+    }
+
+    // Sync Slider
+    function syncSlider(layer, val) {
+      const numVal = parseFloat(val);
+      if (layer === 'wearing') state.thickWearing = numVal;
+      if (layer === 'binder') state.thickBinder = numVal;
+      if (layer === 'base') state.thickBase = numVal;
+
+      // Reset preset dropdown to 'custom'
+      document.getElementById('project-type').value = 'custom';
+
+      updateSliderDisplays();
+      calculatePavement();
+    }
+
+    // Update Slider numerical text labels
+    function updateSliderDisplays() {
+      const unitStr = state.unit === 'imperial' ? ' in' : ' mm';
+      const decimals = state.unit === 'imperial' ? 2 : 0;
+      document.getElementById('disp-wearing').textContent = state.thickWearing.toFixed(decimals) + unitStr;
+      document.getElementById('disp-binder').textContent = state.thickBinder.toFixed(decimals) + unitStr;
+      document.getElementById('disp-base').textContent = state.thickBase.toFixed(decimals) + unitStr;
+    }
+
+    // Apply Preset
+    function applyProjectTypePreset() {
+      const ptype = document.getElementById('project-type').value;
+      if (ptype === 'custom') return;
+
+      const cfg = presets[ptype][state.unit];
+      state.thickWearing = cfg.wearing;
+      state.thickBinder = cfg.binder;
+      state.thickBase = cfg.base;
+
+      document.getElementById('slider-wearing').value = state.thickWearing;
+      document.getElementById('slider-binder').value = state.thickBinder;
+      document.getElementById('slider-base').value = state.thickBase;
+
+      updateSliderDisplays();
+      calculatePavement();
+    }
+
+    // Subgrade soil condition evaluation
+    function evaluateSubgrade() {
+      const val = document.getElementById('subgrade-type').value;
+      state.subgrade = val;
+      const warn = document.getElementById('subgrade-warning');
+      if (val === 'poor') {
+        warn.style.display = 'block';
+      } else {
+        warn.style.display = 'none';
+      }
+      calculatePavement();
+    }
+
+    // Advanced settings toggler
+    function toggleAdvancedSettings() {
+      const box = document.getElementById('advanced-settings-box');
+      box.classList.toggle('open');
+    }
+
+    // Main calculation routine
+    function calculatePavement() {
+      // Gather inputs
+      if (state.dimMode === 'lw') {
+        state.length = parseFloat(document.getElementById('input-length').value) || 0;
+        state.width = parseFloat(document.getElementById('input-width').value) || 0;
+        state.area = state.length * state.width;
+        document.getElementById('input-area').value = state.area.toFixed(1);
+      } else {
+        state.area = parseFloat(document.getElementById('input-area').value) || 0;
+      }
+
+      state.wasteFactor = parseFloat(document.getElementById('input-waste').value) || 0;
+      state.asphaltCost = parseFloat(document.getElementById('input-asphalt-cost').value) || 0;
+      state.baseCost = parseFloat(document.getElementById('input-base-cost').value) || 0;
+      state.asphaltDensity = parseFloat(document.getElementById('input-asphalt-density').value) || (state.unit === 'imperial' ? 145 : 2322);
+
+      const wasteMultiplier = 1 + (state.wasteFactor / 100);
+
+      let totalAsphaltThickInches, totalAsphaltThickMm;
+      let wearingThickInches, binderThickInches, baseThickInches;
+      let areaSqFt, areaSqM;
+
+      if (state.unit === 'imperial') {
+        wearingThickInches = state.thickWearing;
+        binderThickInches = state.thickBinder;
+        baseThickInches = state.thickBase;
+        totalAsphaltThickInches = wearingThickInches + binderThickInches;
+        totalAsphaltThickMm = totalAsphaltThickInches * 25.4;
+        areaSqFt = state.area;
+        areaSqM = areaSqFt * 0.092903;
+      } else {
+        wearingThickInches = state.thickWearing / 25.4;
+        binderThickInches = state.thickBinder / 25.4;
+        baseThickInches = state.thickBase / 25.4;
+        totalAsphaltThickInches = wearingThickInches + binderThickInches;
+        totalAsphaltThickMm = state.thickWearing + state.thickBinder;
+        areaSqM = state.area;
+        areaSqFt = areaSqM * 10.7639;
+      }
+
+      // Volumes & Weights
+      // Volume = Area (sq ft) * (depth in / 12) => Cu Ft
+      const wearingCuFt = areaSqFt * (wearingThickInches / 12);
+      const binderCuFt = areaSqFt * (binderThickInches / 12);
+      const totalAsphaltCuFt = wearingCuFt + binderCuFt;
+      const baseCuFt = areaSqFt * (baseThickInches / 12);
+
+      const wearingCuYd = (wearingCuFt / 27) * wasteMultiplier;
+      const binderCuYd = (binderCuFt / 27) * wasteMultiplier;
+      const totalAsphaltCuYd = (totalAsphaltCuFt / 27) * wasteMultiplier;
+      const baseCuYd = (baseCuFt / 27) * wasteMultiplier;
+
+      // Metric Volumes in Cubic Meters
+      const wearingM3 = (wearingCuFt * 0.0283168) * wasteMultiplier;
+      const binderM3 = (binderCuFt * 0.0283168) * wasteMultiplier;
+      const totalAsphaltM3 = (totalAsphaltCuFt * 0.0283168) * wasteMultiplier;
+      const baseM3 = (baseCuFt * 0.0283168) * wasteMultiplier;
+
+      // Weights
+      let wearingTons, binderTons, totalAsphaltTons, baseTons;
+      let wearingTonnes, binderTonnes, totalAsphaltTonnes, baseTonnes;
+
+      if (state.unit === 'imperial') {
+        const dens = state.asphaltDensity; // lbs/cu ft
+        wearingTons = ((wearingCuFt * dens) / 2000) * wasteMultiplier;
+        binderTons = ((binderCuFt * dens) / 2000) * wasteMultiplier;
+        totalAsphaltTons = wearingTons + binderTons;
+        baseTons = ((baseCuFt * 135) / 2000) * wasteMultiplier;
+
+        wearingTonnes = wearingTons * 0.907185;
+        binderTonnes = binderTons * 0.907185;
+        totalAsphaltTonnes = totalAsphaltTons * 0.907185;
+        baseTonnes = baseTons * 0.907185;
+      } else {
+        const densKg = state.asphaltDensity; // kg/cu m
+        wearingTonnes = ((wearingM3 * densKg) / 1000);
+        binderTonnes = ((binderM3 * densKg) / 1000);
+        totalAsphaltTonnes = wearingTonnes + binderTonnes;
+        baseTonnes = ((baseM3 * 2160) / 1000);
+
+        wearingTons = wearingTonnes * 1.10231;
+        binderTons = binderTonnes * 1.10231;
+        totalAsphaltTons = totalAsphaltTonnes * 1.10231;
+        baseTons = baseTonnes * 1.10231;
+      }
+
+      // Costs
+      const activeAsphaltWeight = state.unit === 'imperial' ? totalAsphaltTons : totalAsphaltTonnes;
+      const activeBaseWeight = state.unit === 'imperial' ? baseTons : baseTonnes;
+      const asphaltCostTotal = activeAsphaltWeight * state.asphaltCost;
+      const baseCostTotal = activeBaseWeight * state.baseCost;
+      const grandTotalCost = asphaltCostTotal + baseCostTotal;
+
+      // Update Highlight Metrics
+      if (state.unit === 'imperial') {
+        document.getElementById('res-total-asphalt-thick').textContent = `${totalAsphaltThickInches.toFixed(2)} in`;
+        document.getElementById('res-total-asphalt-metric').textContent = `${totalAsphaltThickMm.toFixed(1)} mm Structural Depth`;
+        document.getElementById('res-total-asphalt-weight').textContent = `${totalAsphaltTons.toFixed(1)} Tons`;
+        document.getElementById('res-total-asphalt-vol').textContent = `${totalAsphaltCuYd.toFixed(1)} Cu Yd (incl. ${state.wasteFactor}% waste)`;
+        document.getElementById('res-total-base-weight').textContent = `${baseTons.toFixed(1)} Tons`;
+        document.getElementById('res-total-base-vol').textContent = `${baseThickInches.toFixed(1)} in Depth (${baseCuYd.toFixed(1)} Cu Yd)`;
+      } else {
+        document.getElementById('res-total-asphalt-thick').textContent = `${Math.round(totalAsphaltThickMm)} mm`;
+        document.getElementById('res-total-asphalt-metric').textContent = `${totalAsphaltThickInches.toFixed(2)} in Structural Depth`;
+        document.getElementById('res-total-asphalt-weight').textContent = `${totalAsphaltTonnes.toFixed(1)} Tonnes`;
+        document.getElementById('res-total-asphalt-vol').textContent = `${totalAsphaltM3.toFixed(1)} m³ (incl. ${state.wasteFactor}% waste)`;
+        document.getElementById('res-total-base-weight').textContent = `${baseTonnes.toFixed(1)} Tonnes`;
+        document.getElementById('res-total-base-vol').textContent = `${Math.round(baseThickInches * 25.4)} mm Depth (${baseM3.toFixed(1)} m³)`;
+      }
+
+      document.getElementById('res-total-cost').textContent = `$${Math.round(grandTotalCost).toLocaleString()}`;
+      document.getElementById('res-cost-breakdown').textContent = `Asphalt: $${Math.round(asphaltCostTotal).toLocaleString()} | Base: $${Math.round(baseCostTotal).toLocaleString()}`;
+
+      // Update Breakdown Table
+      const unitVolStr = state.unit === 'imperial' ? ' cu yd' : ' m³';
+      const unitWtStr = state.unit === 'imperial' ? ' tons' : ' tonnes';
+      const unitDepthStr = state.unit === 'imperial' ? ' in' : ' mm';
+
+      const dWearing = state.unit === 'imperial' ? state.thickWearing.toFixed(2) : state.thickWearing;
+      const dBinder = state.unit === 'imperial' ? state.thickBinder.toFixed(2) : state.thickBinder;
+      const dBase = state.unit === 'imperial' ? state.thickBase.toFixed(1) : state.thickBase;
+      const dTotal = state.unit === 'imperial' ? (totalAsphaltThickInches + baseThickInches).toFixed(2) : Math.round(totalAsphaltThickMm + (baseThickInches * 25.4));
+
+      const vWearing = state.unit === 'imperial' ? wearingCuYd.toFixed(1) : wearingM3.toFixed(1);
+      const vBinder = state.unit === 'imperial' ? binderCuYd.toFixed(1) : binderM3.toFixed(1);
+      const vBase = state.unit === 'imperial' ? baseCuYd.toFixed(1) : baseM3.toFixed(1);
+      const vTotal = state.unit === 'imperial' ? (totalAsphaltCuYd + baseCuYd).toFixed(1) : (totalAsphaltM3 + baseM3).toFixed(1);
+
+      const wWearing = state.unit === 'imperial' ? wearingTons.toFixed(1) : wearingTonnes.toFixed(1);
+      const wBinder = state.unit === 'imperial' ? binderTons.toFixed(1) : binderTonnes.toFixed(1);
+      const wBase = state.unit === 'imperial' ? baseTons.toFixed(1) : baseTonnes.toFixed(1);
+      const wTotal = state.unit === 'imperial' ? (totalAsphaltTons + baseTons).toFixed(1) : (totalAsphaltTonnes + baseTonnes).toFixed(1);
+
+      document.getElementById('row-wearing-depth').textContent = `${dWearing}${unitDepthStr}`;
+      document.getElementById('row-wearing-vol').textContent = `${vWearing}${unitVolStr}`;
+      document.getElementById('row-wearing-wt').textContent = `${wWearing}${unitWtStr}`;
+
+      const binderRow = document.getElementById('row-binder-tr');
+      if (binderThickInches <= 0) {
+        binderRow.style.display = 'none';
+      } else {
+        binderRow.style.display = '';
+        document.getElementById('row-binder-depth').textContent = `${dBinder}${unitDepthStr}`;
+        document.getElementById('row-binder-vol').textContent = `${vBinder}${unitVolStr}`;
+        document.getElementById('row-binder-wt').textContent = `${wBinder}${unitWtStr}`;
+      }
+
+      document.getElementById('row-base-depth').textContent = `${dBase}${unitDepthStr}`;
+      document.getElementById('row-base-vol').textContent = `${vBase}${unitVolStr}`;
+      document.getElementById('row-base-wt').textContent = `${wBase}${unitWtStr}`;
+
+      document.getElementById('row-total-depth').textContent = `${dTotal}${unitDepthStr}`;
+      document.getElementById('row-total-vol').textContent = `${vTotal}${unitVolStr}`;
+      document.getElementById('row-total-wt').textContent = `${wTotal}${unitWtStr}`;
+
+      // Update Visual Cross-Section Profile Heights & Labels
+      updateDiagram(wearingThickInches, binderThickInches, baseThickInches);
+    }
+
+    // Dynamic Visual Cross-Section updater
+    function updateDiagram(wearingIn, binderIn, baseIn) {
+      const visWearing = document.getElementById('vis-layer-wearing');
+      const visBinder = document.getElementById('vis-layer-binder');
+      const visBase = document.getElementById('vis-layer-base');
+
+      const wearingMm = Math.round(wearingIn * 25.4);
+      const binderMm = Math.round(binderIn * 25.4);
+      const baseMm = Math.round(baseIn * 25.4);
+
+      document.getElementById('vis-depth-wearing').textContent = `${wearingIn.toFixed(2)} in (${wearingMm} mm)`;
+      document.getElementById('vis-depth-binder').textContent = `${binderIn.toFixed(2)} in (${binderMm} mm)`;
+      document.getElementById('vis-depth-base').textContent = `${baseIn.toFixed(1)} in (${baseMm} mm)`;
+
+      // Proportional heights: min 30px, max 110px
+      const hWearing = Math.max(30, Math.min(75, Math.round(wearingIn * 24)));
+      visWearing.style.height = `${hWearing}px`;
+
+      if (binderIn <= 0) {
+        visBinder.style.display = 'none';
+      } else {
+        visBinder.style.display = 'flex';
+        const hBinder = Math.max(30, Math.min(85, Math.round(binderIn * 20)));
+        visBinder.style.height = `${hBinder}px`;
+      }
+
+      const hBase = Math.max(45, Math.min(120, Math.round(baseIn * 9)));
+      visBase.style.height = `${hBase}px`;
+    }
+
+    // Copy Specifications
+    function copySpecsToClipboard() {
+      const btn = document.getElementById('btn-copy-specs');
+      const text = `=== PaveMaster Asphalt Pavement Specification ===\n` +
+        `Total Asphalt Thickness: ${document.getElementById('res-total-asphalt-thick').textContent} (${document.getElementById('res-total-asphalt-metric').textContent})\n` +
+        `Asphalt Mix Required: ${document.getElementById('res-total-asphalt-weight').textContent} (${document.getElementById('res-total-asphalt-vol').textContent})\n` +
+        `Aggregate Base: ${document.getElementById('res-total-base-weight').textContent} (${document.getElementById('res-total-base-vol').textContent})\n` +
+        `Estimated Materials Cost: ${document.getElementById('res-total-cost').textContent}\n` +
+        `Generated via PaveMaster Asphalt Thickness Calculator`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 2000);
+      }).catch(err => {
+        alert('Specification copied to clipboard.');
+      });
+    }
+
+    // Initialize calculator on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      updateSliderDisplays();
+      calculatePavement();
+    });
+  </script>
+
+</body>
+</html>
